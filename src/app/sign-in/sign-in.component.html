@@ -1,0 +1,29 @@
+
+<!-- Template Driven Form -->
+
+<div class="container">
+    <div class="row text-center">
+        <h2>Sign In</h2>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-5">
+
+            <form #signIn="ngForm" (ngSubmit)="logIn(signIn)">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" required ngModel >
+                    <div id="emailHelp" class="form-text">Please enter your Email here.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" aria-describedby="passwordHelp" name="password" required ngModel >
+                    <div id="passwordHelp" class="form-text">Please enter your Password here.</div>
+                </div>
+                <button type="submit" class="btn btn-primary" [disabled]="!signIn.valid">Sign In</button>
+
+                <div class="text-danger" *ngIf="isInvalid" >You have entered Invalid Email or Password</div>
+            </form>
+        </div>
+    </div>
+</div>

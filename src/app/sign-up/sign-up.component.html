@@ -1,0 +1,44 @@
+<!-- Reactive Form -->
+
+<div class="container">
+    <div class="row text-center">
+        <h2>Register</h2>
+    </div>
+    <div class="row d-flex justify-content-center ">
+        <div class="col-6">
+            <form class="m-3" [formGroup]="registerForm" (ngSubmit)="createUser()">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" aria-describedby="nameHelp" formControlName="name">
+                    <div id="nameHelp" class="form-text">Please enter your Name here.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="age" class="form-label">Age</label>
+                    <input type="number" class="form-control" id="age" aria-describedby="ageHelp" formControlName="age">
+                    <div id="ageHelp" class="form-text">Please enter your Age here.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" formControlName="email">
+                    <div id="emailHelp" class="form-text">Please enter your Email here.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="text" class="form-control" id="password" aria-describedby="passwordHelp" formControlName="password" >
+                    <div id="passwordHelp" class="form-text">Please enter Passoword here.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="confirmPassowrd" class="form-label">Confirm Password</label>
+                    <input type="text" class="form-control" id="confirmPassowrd" aria-describedby="confirmPassowrdHelp" formControlName="confirmPassowrd" >
+                    <div id="confirmPassowrdHelp" class="form-text">Please Re-enter your Password here.</div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" [disabled]="isFormInValid()">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</div>
